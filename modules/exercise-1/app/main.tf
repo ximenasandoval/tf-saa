@@ -77,6 +77,7 @@ resource "aws_launch_template" "app_lt" {
   }
   user_data = base64encode(templatefile("${path.module}/templates/template.sh", {
     bucket_name = var.bucket_name
+    region      = var.region
   }))
 }
 
