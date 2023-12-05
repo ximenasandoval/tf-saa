@@ -1,7 +1,11 @@
-variable "subnet_name" {
-  description = "Name of the subnet to place EC2 instance in"
+variable "subnet_1_name" {
+  description = "Name of the subnet 1 to place EC2 instance in"
   type        = string
+}
 
+variable "subnet_2_name" {
+  description = "Name of the subnet 1 to place EC2 instance in"
+  type        = string
 }
 
 variable "vpc_name" {

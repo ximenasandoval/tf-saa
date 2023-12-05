@@ -64,7 +64,7 @@ resource "aws_launch_template" "app_lt" {
   network_interfaces {
     associate_public_ip_address = true
     security_groups             = [aws_security_group.web-security-group.id]
-    subnet_id                   = data.aws_subnet.subnet.id
+    subnet_id                   = data.aws_subnet.subnet_1.id
   }
 
   # vpc_security_group_ids = [aws_security_group.web-security-group.id]
@@ -84,10 +84,12 @@ resource "aws_launch_template" "app_lt" {
 
 resource "aws_autoscaling_group" "app_asg" {
   name               = "app-asg"
-  availability_zones = [data.aws_subnet.subnet.availability_zone]
+  availability_zones = [data.aws_subnet.subnet_1.availability_zone]
   desired_capacity   = 1
   max_size           = 1
   min_size           = 1
+
+  target_group_arns = [aws_lb_target_group.app-target-group.arn]
 
   launch_template {
     id      = aws_launch_template.app_lt.id

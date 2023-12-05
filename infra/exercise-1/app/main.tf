@@ -9,8 +9,9 @@ terraform {
 }
 
 module "app" {
-  source      = "../../../modules/exercise-1/app"
-  subnet_name = "Public subnet 1"
-  vpc_name    = "app-vpc"
-  bucket_name = "employee-photo-bucket-xs-2023"
+  source        = "../../../modules/exercise-1/app"
+  subnet_1_name = "Public subnet 1"
+  subnet_2_name = "Public subnet 2"
+  vpc_name      = "app-vpc"
+  bucket_name   = "employee-photo-bucket-xs-2023"
 }

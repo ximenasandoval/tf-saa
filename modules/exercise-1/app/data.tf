@@ -8,10 +8,17 @@ data "aws_ami" "amzn-linux-2023-ami" {
   }
 }
 
-data "aws_subnet" "subnet" {
+data "aws_subnet" "subnet_1" {
   filter {
     name   = "tag:Name"
-    values = ["${var.subnet_name}"]
+    values = ["${var.subnet_1_name}"]
+  }
+}
+
+data "aws_subnet" "subnet_2" {
+  filter {
+    name   = "tag:Name"
+    values = ["${var.subnet_2_name}"]
   }
 }
 
