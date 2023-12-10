@@ -158,7 +158,7 @@ resource "aws_iam_policy" "kinesis_policy" {
                 "lambda:InvokeFunction",
                 "lambda:GetFunctionConfiguration"
             ],
-            "Resource": "arn:aws:lambda:us-west-2:087840347552:function:transform-data:$LATEST"
+            "Resource": "arn:aws:lambda:us-west-2:087840347552:function:transform-data*"
         },
         {
             "Effect": "Allow",
