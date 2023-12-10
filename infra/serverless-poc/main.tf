@@ -1,3 +1,4 @@
+
 terraform {
   required_providers {
     aws = {
@@ -7,8 +8,7 @@ terraform {
   }
 }
 
-module "vpc" {
-  source     = "../../../modules/exercise-1/vpc"
-  name       = "app-vpc"
-  cidr_block = "10.1.0.0/16"
+module "serverless" {
+  source = "../../modules/serverless-poc"
+  email  = var.email
 }

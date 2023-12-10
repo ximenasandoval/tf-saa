@@ -9,7 +9,7 @@ terraform {
 }
 
 module "app" {
-  source        = "../../../modules/exercise-1/app"
+  source        = "../../../modules/employee-app/app"
   subnet_1_name = "Public subnet 1"
   subnet_2_name = "Public subnet 2"
   vpc_name      = "app-vpc"
