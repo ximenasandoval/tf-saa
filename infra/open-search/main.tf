@@ -9,6 +9,6 @@ terraform {
 }
 
 module "open-search" {
-  source     = "../../../modules/open-search"
+  source     = "../../modules/open-search"
   ip_address = var.ip_address
 }
